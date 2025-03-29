@@ -1,7 +1,7 @@
 import time # importing time module
 import numpy as np # importimg the numpy moudule
 from neurapy.robot import Robot # from neurapy import Robot
-# from Neurapy import move_robot_to_position, servo_j
+from Neurapy import move_robot_to_position, servo_j
 
 # Conveyor belt speed (assumed constant for simplicity)  
 conveyor_speed = 0.5  # meters per second
@@ -23,7 +23,7 @@ def track_and_pick(): # function for track and pick
     target_pose = [future_x, object_pose["y"], object_pose["z"], 
                    object_pose["qx"], object_pose["qy"], object_pose["qz"], object_pose["qw"]]
 
-    # servo_j(target_pose)  # Adjust robot motion in real-time
+    servo_j(target_pose)  # Adjust robot motion in real-time
 
     # Simulate gripping action
     r.gripper("on") # setting the gripper communication
