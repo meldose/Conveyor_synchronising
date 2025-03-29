@@ -1,7 +1,7 @@
 import time
 import numpy as np
 from CommunicationLibrary import send_command
-from Neurapy import move_robot_to_position, servo_j
+# from Neurapy import move_robot_to_position, servo_j
 
 # Conveyor belt speed (assumed constant for simplicity)
 conveyor_speed = 0.5  # meters per second
@@ -23,7 +23,7 @@ def track_and_pick():
     target_pose = [future_x, object_pose["y"], object_pose["z"], 
                    object_pose["qx"], object_pose["qy"], object_pose["qz"], object_pose["qw"]]
 
-    servo_j(target_pose)  # Adjust robot motion in real-time
+    # servo_j(target_pose)  # Adjust robot motion in real-time
 
     # Simulate gripping action
     send_command("CLOSE_GRIPPER")
