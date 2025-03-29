@@ -6,12 +6,12 @@ from CommunicationLibrary import send_command
 # Conveyor belt speed (assumed constant for simplicity)
 conveyor_speed = 0.5  # meters per second
 
-def get_object_pose():
+def get_object_pose(): # function for getting the object pose
     """Retrieve object pose from camera or sensor (simulated)."""
     # Simulated response, replace with actual vision system data
     return {"x": 0.3, "y": 0.2, "z": 0.1, "qx": 0, "qy": 0, "qz": 0, "qw": 1}
 
-def track_and_pick():
+def track_and_pick(): # function for track and pick
     """Continuously track the object and synchronize the robot."""
     object_pose = get_object_pose()
     
@@ -26,7 +26,7 @@ def track_and_pick():
     # servo_j(target_pose)  # Adjust robot motion in real-time
 
     # Simulate gripping action
-    send_command("CLOSE_GRIPPER")
+    r.gripper("on") # setting the gripper communication
     print("Object picked successfully.")
 
 # Run synchronization process
